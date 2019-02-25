@@ -2,7 +2,7 @@ This repository contains an end-to-end Sudoku solver. End-to-end means that the 
 
  - `end2end.ipynb`: this notebook contains a full demo using the code contained in the other notebooks. It records from the webcam and waits for the user to show a Sudoku, then recognizes the board and the digits, and through simple interaction asks the user to correct possible mistakes, and finally tries to solve the puzzle.
  - `find_grid_boxes.ipynb`: this is my first failed attempt at extracting the Sudoku board from an image. The idea was to extract the thick lines, then aggregate them to find the 9 large squares, and finally cut each of them into the 9 small cells; unfortunately this proved quite hard so I abandoned this approach. Perhaps better CV parameters would improve the recognition of the thick lines, and make the following tasks easier.
-  - `extract_digits.ipynb`: this notebook contains the code that extracts the 81 cells from a Sudoku image. The high level approach is as follows:
+  - `extract_digits.ipynb`: this notebook contains the code that extracts the 81 cells from a Sudoku image. Moreover, it creates a labeled training set using the few test images I have. The high level approach is as follows:
      1. smooth and binarize the image, and apply further pre-processing to enhance the thick lines and remove the thin ones
      2. extract the center square using flood fill
      3. use the size and position of the center square to find the approximate position of the other 8
